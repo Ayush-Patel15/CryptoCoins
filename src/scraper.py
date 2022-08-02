@@ -1,6 +1,6 @@
 import requests
 import json
-from pprint import pprint
+# from pprint import pprint
 
 BASE_URL = "https://api.coinmarketcap.com/data-api/v3/cryptocurrency/listing"
 
@@ -35,7 +35,7 @@ def get_crypto_list():
     ).text
     json_data = json.loads(response)["data"]["cryptoCurrencyList"]
 
-    pprint(len(json_data))
+    # pprint(len(json_data))
 
 if __name__ == "__main__":
     get_crypto_list()
