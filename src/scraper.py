@@ -1,25 +1,29 @@
-import requests
-import json
-# from pprint import pprint
+from pprint import pprint
+import random
+from user_agents import USER_AGENTS
+from helpers import _get_json_
 
-BASE_URL = "https://api.coinmarketcap.com/data-api/v3/cryptocurrency/listing"
 
-def get_crypto_list():
-    session = requests.session()
-    headers = {
-        "authority" : "api.coinmarketcap.com",
-        "method" : "GET",
-        "scheme" : "https",
-        "accept" : "application/json, text/plain, */*",
-        "accept-encoding" : "gzip, deflate, br",
-        "accept-language" : "en-US,en;q=0.9,hi;q=0.8",
-        "cache-control" : "no-cache",
-        "origin" : "https://coinmarketcap.com",
-        "pragma" : "no-cache",
-        "referer" : "https://coinmarketcap.com/",
-        "user-agent" : "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36"
-    }
-    para_ditc = {
+COINMARKETCAP_LIST_URL = "https://api.coinmarketcap.com/data-api/v3/cryptocurrency/listing"
+
+coinmarketcap_headers = {
+    "authority" : "api.coinmarketcap.com",
+    "method" : "GET",
+    "scheme" : "https",
+    "accept" : "application/json, text/plain, */*",
+    "accept-encoding" : "gzip, deflate, br",
+    "accept-language" : "en-US,en;q=0.9,hi;q=0.8",
+    "cache-control" : "no-cache",
+    "origin" : "https://coinmarketcap.com",
+    "pragma" : "no-cache",
+    "referer" : "https://coinmarketcap.com/",
+    "user-agent" : random.choice(USER_AGENTS)
+}
+
+
+def get_cryptocurrency_list():
+    crypto_list = []
+    para_dict = {
         "start": "1",
         "limit": "12",
         "sortBy": "market_cap",
@@ -27,15 +31,34 @@ def get_crypto_list():
         "convert" : "USD",
         "aux" : "ath,atl,high24h,low24h,cmcrank,total_supply"
     }
-
-    response = session.get(
-        BASE_URL,
-        headers=headers,
-        params=para_ditc
-    ).text
-    json_data = json.loads(response)["data"]["cryptoCurrencyList"]
-
-    # pprint(len(json_data))
+    response = _get_json_(
+        url=COINMARKETCAP_LIST_URL,
+        headers=coinmarketcap_headers,
+        params=para_dict
+    )
+    list_data = response["data"]["cryptoCurrencyList"]
+    for each in list_data:
+        quotes_data = each["quotes"][0]
+        item = {
+            "identifier": each["symbol"],
+            "slug": each["slug"],
+            "data": {
+                "name": each["name"].upper(),
+                "day_high": each["high24h"],
+                "day_low": each["low24h"],
+                "ath": each["ath"],
+                "atl": each["atl"],
+                "total_sypply": each["totalSupply"],
+                "price": quotes_data["price"],
+                "market_cap": quotes_data["marketCap"],
+                "volume": quotes_data["volume24h"],
+                "change_1hr": quotes_data["percentChange1h"],
+                "ytd_change": quotes_data["ytdPriceChangePercentage"]
+            }
+        }
+        crypto_list.append(item)
+    return crypto_list
+    
 
 if __name__ == "__main__":
-    get_crypto_list()
+    pprint(get_cryptocurrency_list())
