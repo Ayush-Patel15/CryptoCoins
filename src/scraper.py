@@ -1,11 +1,28 @@
+"""
+The file contains a function, that scrapes the data of top 12 cryptocurrencies by market cap.
+Data contains: -
+- name
+- price
+- days_high
+- days_low
+- ath
+- atl
+- total_supply
+- market_cap
+- volume
+- change of price in last 1hr (percent)
+- yeartodate price change percent
+"""
+# Import Statements
 from pprint import pprint
 import random
 from user_agents import USER_AGENTS
 from helpers import _get_json_
 
-
+# BASE_URLS
 COINMARKETCAP_LIST_URL = "https://api.coinmarketcap.com/data-api/v3/cryptocurrency/listing"
 
+# HEADERS
 coinmarketcap_headers = {
     "authority" : "api.coinmarketcap.com",
     "method" : "GET",
@@ -21,6 +38,10 @@ coinmarketcap_headers = {
 }
 
 
+##########  FUNCTIONS  ##########
+
+# Function scrape the COINMARKETCAP_LIST_URL to get basic details like price, name etc.
+# It returns list of 12 cryptocurrencies.
 def get_cryptocurrency_list():
     crypto_list = []
     para_dict = {
