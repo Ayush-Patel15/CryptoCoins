@@ -1,0 +1,22 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Navbar Stylings */
+#nav-bar{
+    background-color: #1a75ff;
+}
+
+.logo-title{
+    font-size: 20px;
+    font-weight: 550;
+    text-shadow: none;
+    text-align: center;
+    padding-left: 3px;
+}

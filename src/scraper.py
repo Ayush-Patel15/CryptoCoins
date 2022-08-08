@@ -15,9 +15,9 @@ Data contains: -
 """
 # Import Statements
 from pprint import pprint
-import random
 from user_agents import USER_AGENTS
 from helpers import _get_json_
+import random
 
 # BASE_URLS
 COINMARKETCAP_LIST_URL = "https://api.coinmarketcap.com/data-api/v3/cryptocurrency/listing"
