@@ -1,5 +1,5 @@
 *{
-    color: white;
+    color: #0d0d26;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -16,6 +16,7 @@ body{
 
 .logo-title{
 /*    color: #4ddbff; */
+    color: white;
     font-size: 44px;
     font-weight: 550;
     font-style: italic;
@@ -36,16 +37,29 @@ body{
 }
 
 .banner-head .banner-point{
+    color: white;
     font-size: 32px;
     font-weight: 450;
     margin-bottom: 30px;
 }
 
-.banner-subpoints{
+i{
+    color: white;
+    font-size: 20px;
+}
+
+.banner-subpoints a{
+    margin-left: 15px;
+    color: white;
     font-size: 22px;
     font-weight: 300;
     font-style: italic;
-    margin-left: 5px;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.banner-subpoints a:hover{
+    transform: scale(1.2);
 }
 
 .lg-banner{
