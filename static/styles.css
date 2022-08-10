@@ -52,3 +52,7 @@ body{
     height: 400px;
     width: 400px;
 }
+
+.wave-pattern{
+    margin-top: -50px;      /* To reduce the screen size of banner */
+}
