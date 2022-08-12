@@ -104,3 +104,40 @@ i{
     display: block;
     transform: translateY(12px);
 }
+
+/* Crypto-cards-stylings */
+.card{
+    margin: 50px auto;
+    width: 20%;
+}
+
+.card-header{
+    padding-top: 25px;
+}
+
+.card-title{
+    display: inline;
+}
+
+.card-price{
+    float: right;
+}
+
+.card-body{
+    padding: 10px 20px;
+}
+
+td.text{
+    float: left;
+    padding-top: 5px;
+}
+
+td.value{
+    margin-right: -150px;
+    float: right;
+    padding-top: 5px;
+}
+
+.card-footer{
+    padding: 15px;
+}
