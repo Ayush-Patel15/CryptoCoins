@@ -27,7 +27,7 @@ body{
 
 /* Banner Stylings */
 #banner{
-    background-image: linear-gradient(#0d0d26,#1a1a4c);
+    background-image: linear-gradient(#0d0d26,#21215f);
     margin-top: -15px;      /* To reduce the screen size of banner */
 }
 
@@ -158,3 +158,49 @@ td.value{
 .card-footer a{
     border-color: #0d0d26;
 }
+
+/* FOOTER SECTION STYLING */
+#footer{
+    background-image: linear-gradient(#21215f,#0d0d26);
+    margin-top: 25px;
+    padding-bottom: 25px;
+}
+
+.contact-me{
+    padding-left: 10%;
+    padding-top: 75px;
+    font-size: 20px;
+    font-weight: 100;
+}
+
+.foot-heading span{
+    color: white;
+    font-size: 24px;
+    font-weight: 350;
+}
+
+.social-links{
+    padding-top: 15px;
+}
+
+.social-links a{
+    display: inline-block;
+}
+
+.social-links a:hover{
+    transform: scale(1.2);
+}
+
+.social-media-icon{
+    height: 50px;
+    width: 50px;
+}
+
+.copyright-text{
+    color: white;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 250;
+}
+
+/* END OF CSS */
