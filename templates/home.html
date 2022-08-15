@@ -52,6 +52,7 @@
             <div class="container-fluid">
                 <div class="row">
                     <h2 class="title">Cryptocurrency Prices by Market Cap</h2>
+                    {% for i in range(12): %}
                     <div class="col-lg-3 card-content">
                         <div class="card shadow rounded">
                             <div class="card-header bg-white">
@@ -102,14 +103,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-3 card-content">
-                        <div class="card shadow rounded"></div>
-                    </div>
-                    <div class="col-lg-3 card-content">
-                        <div class="card shadow rounded"></div>
-                    </div>
-                    <div class="col-lg-3 card-content">
-                        <div class="card shadow rounded"></div>
+                    {% endfor %}
                     </div>
                 </div>
             </div>
