@@ -27,39 +27,43 @@ body{
 
 /* Banner Stylings */
 #banner{
-    background-color: #0d0d26;
+    background-image: linear-gradient(#0d0d26,#1a1a4c);
     margin-top: -15px;      /* To reduce the screen size of banner */
 }
 
-.banner-head{
-    margin-top: 75px;
-    margin-left: 145px;
+.heading{
+    margin-top: 80px;
+    margin-left: 125px;
 }
 
-.banner-head .banner-point{
+.head-point{
     color: white;
     font-size: 32px;
     font-weight: 450;
+    margin-left: 25px;
     margin-bottom: 30px;
 }
 
-i{
-    color: white;
-    font-size: 20px;
-}
-
-.banner-subpoints a{
-    margin-left: 15px;
+.subpoints{
+    margin-left: 35px;
     color: white;
     font-size: 22px;
     font-weight: 300;
     font-style: italic;
+}
+
+.subpoints a{
     text-decoration: none;
     display: inline-block;
 }
 
-.banner-subpoints a:hover{
+.subpoints a:hover{
     transform: scale(1.2);
+}
+
+i{
+    color: white;
+    font-size: 22px;
 }
 
 .lg-banner{
@@ -67,8 +71,8 @@ i{
     width: 400px;
 }
 
-.wave-pattern{
-    margin-top: -50px;      /* To reduce the screen size of banner */
+.head-wave-pattern{
+    margin-top: -20px;      /* To reduce the screen size of banner */
     margin-bottom: -5px;
 }
 
@@ -132,13 +136,17 @@ i{
     padding: 10px 20px;
 }
 
+table{
+    width: 100%;
+}
+
 td.text{
+    width: 50%;
     float: left;
     padding-top: 5px;
 }
 
 td.value{
-    margin-right: -165px;
     float: right;
     padding-top: 5px;
 }
