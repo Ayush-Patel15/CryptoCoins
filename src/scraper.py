@@ -13,10 +13,10 @@ Data contains: -
 - change of price in last 1hr (percent)
 - yeartodate price change percent
 """
-# Import Statements
-from pprint import pprint
-from user_agents import USER_AGENTS
-from helpers import _get_json_
+## Import Statements
+# from pprint import pprint
+from .user_agents import USER_AGENTS
+from .helpers import _get_json_
 import random
 
 # BASE_URLS
@@ -82,4 +82,4 @@ def get_cryptocurrency_list():
     
 
 if __name__ == "__main__":
-    pprint(get_cryptocurrency_list())
+    print(get_cryptocurrency_list())
