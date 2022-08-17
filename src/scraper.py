@@ -40,7 +40,7 @@ coinmarketcap_headers = {
 
 ##########  FUNCTIONS  ##########
 
-# Function scrape the COINMARKETCAP_LIST_URL to get basic details like price, name etc.
+# Function scrape the COINMARKETCAP's URL to get basic details like price, name etc.
 # It returns list of 12 cryptocurrencies.
 def get_cryptocurrency_list():
     crypto_list = []

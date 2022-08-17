@@ -5,7 +5,7 @@ The file contains all the necessary helper functions, that will be needed in dif
 import requests
 import json
 
-## Function to extract data from a url's that serve json data in a json-format.
+## Function to extract json data from a url and serve json-format.
 def _get_json_(url, headers={}, params={}):
     session = requests.session()
     print("Fetching - {0}".format(url))
