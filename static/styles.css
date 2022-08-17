@@ -160,6 +160,12 @@ td.value{
 
 .card-footer a{
     border-color: #0d0d26;
+    display: inline-block;
+}
+
+.card-footer a:hover{
+    background-color: whitesmoke;
+    transform: scale(1.1);
 }
 
 /* FOOTER SECTION STYLING */

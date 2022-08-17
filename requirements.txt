@@ -1,0 +1,15 @@
+certifi
+charset-normalizer
+click
+colorama
+Flask
+gunicorn
+idna
+importlib-metadata
+itsdangerous
+Jinja2
+MarkupSafe
+requests
+urllib3
+Werkzeug
+zipp
