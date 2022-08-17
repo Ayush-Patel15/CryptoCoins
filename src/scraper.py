@@ -13,11 +13,11 @@ Data contains: -
 - change of price in last 1hr (percent)
 - yeartodate price change percent
 """
-# Import Statements
-from pprint import pprint
+## Import Statements
+# from pprint import pprint
+from .user_agents import USER_AGENTS
+from .helpers import _get_json_, round_number
 import random
-from user_agents import USER_AGENTS
-from helpers import _get_json_
 
 # BASE_URLS
 COINMARKETCAP_LIST_URL = "https://api.coinmarketcap.com/data-api/v3/cryptocurrency/listing"
@@ -65,16 +65,16 @@ def get_cryptocurrency_list():
             "slug": each["slug"],
             "data": {
                 "name": each["name"].upper(),
-                "day_high": each["high24h"],
-                "day_low": each["low24h"],
-                "ath": each["ath"],
-                "atl": each["atl"],
-                "total_sypply": each["totalSupply"],
-                "price": quotes_data["price"],
-                "market_cap": quotes_data["marketCap"],
-                "volume": quotes_data["volume24h"],
-                "change_1hr": quotes_data["percentChange1h"],
-                "ytd_change": quotes_data["ytdPriceChangePercentage"]
+                "day_high": round_number(each["high24h"]),
+                "day_low": round_number(each["low24h"]),
+                "ath": round_number(each["ath"]),
+                "atl": round_number(each["atl"]),
+                "total_sypply": round_number(each["totalSupply"]),
+                "price": round_number(quotes_data["price"]),
+                "market_cap": round_number(quotes_data["marketCap"]),
+                "volume": round_number(quotes_data["volume24h"]),
+                "change_1hr": round_number(quotes_data["percentChange1h"]),
+                "ytd_change": round_number(quotes_data["ytdPriceChangePercentage"])
             }
         }
         crypto_list.append(item)
@@ -82,4 +82,4 @@ def get_cryptocurrency_list():
     
 
 if __name__ == "__main__":
-    pprint(get_cryptocurrency_list())
+    print(get_cryptocurrency_list())

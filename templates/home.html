@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <title>CRYPTOCOINS</title>
+        <link href="{{ url_for('static', filename='images/logo_cryptocoins.png') }}" rel="icon">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" rel="stylesheet"></script>
+        <link href="https://fonts.googleapis.com" rel="preconnect">
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&display=swap" rel="stylesheet">
+        <link href="{{ url_for('static', filename='styles.css') }}" rel="stylesheet">
+    </head>
+
+    <body>
+        <!--<h3 id="head-title">Hello World</h3>-->
+
+        <!------------------NAVBAR-------------------->
+        <section id="nav-bar" class="container-fluid">
+            <nav class="navbar navbar-light">
+                <a class="navbar-brand" href="#">
+                    <span class="logo-title">CryptoCoins</span>
+                </a>
+            </nav>
+        </section>
+
+        <!------------------BANNER-------------------->
+        <section id="banner">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="heading">
+                            <p class="head-point">Track Cryptocurrency</p>
+                            <p class="subpoints"><a href="#"><i class="bi bi-caret-right-fill">Top 12 by MCAP</i></a></p>
+                            <p class="subpoints"><a href="#"><i class="bi bi-caret-right-fill">Live Prices</i></a></p>
+                            <p class="subpoints"><a href="#"><i class="bi bi-caret-right-fill">24 x 7 available</i></a></p>
+                            <p class="subpoints"><a href="#"><i class="bi bi-caret-right-fill">Real-time Data</i></a></p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 text-center">
+                        <img src="{{ url_for('static', filename='images/banner_1_main.png') }}" class="lg-banner img-fluid">
+                    </div>
+                </div>
+            </div>
+            <img src="{{ url_for('static', filename='images/wave1.png') }}" class="head-wave-pattern img-fluid">
+        </section>
+
+        <!------------------CRYPTO CARDS-------------------->
+        <section id="content-crypto-cards">
+            <div class="container-fluid">
+                <div class="row">
+                    <h2 class="title">Cryptocurrency Prices by Market Cap</h2>
+                    {% for each in crypto_list: %}
+                    <div class="col-lg-3 card-content">
+                        <div class="card shadow rounded">
+                            <div class="card-header bg-white">
+                                <h4 class="card-title">{{ each["data"]["name"] }}</h4>
+                                <h5 class="card-price">{{ each["data"]["price"] }}</h5>
+                                <div class="card-volume text-secondary">Vol: {{ each["data"]["volume"] }}</div>
+                            </div>
+                            <div class="card-body">
+                                <table class="crypto-table-content">
+                                    <tbody>
+                                        <tr class="change-1hr">
+                                            <td class="text">1-HR Change</td>
+                                            {% if each["data"]["change_1hr"] >= 0 %}
+                                                {% set color = "text-success" %}
+                                            {% else %}
+                                                {% set color = "text-danger" %}
+                                            {% endif %}
+                                            <td class="value {{ color }}">{{ each["data"]["change_1hr"] }}</td>
+                                        </tr>
+                                        <tr class="days-low">
+                                            <td class="text">Day's Low</td>
+                                            <td class="value">{{ each["data"]["day_low"] }}</td>
+                                        </tr>
+                                        <tr class="days-high">
+                                            <td class="text">Day's High</td>
+                                            <td class="value">{{ each["data"]["day_high"] }}</td>
+                                        </tr>
+                                        <tr class="atl">
+                                            <td class="text">ATL</td>
+                                            <td class="value">{{ each["data"]["atl"] }}</td>
+                                        </tr>
+                                        <tr class="ath">
+                                            <td class="text">ATH</td>
+                                            <td class="value">{{ each["data"]["ath"] }}</td>
+                                        </tr>
+                                        <tr class="ytd-change">
+                                            <td class="text">YTD Change</td>
+                                            {% if each["data"]["ytd_change"] >= 0 %}
+                                                {% set color = "text-success" %}
+                                            {% else %}
+                                                {% set color = "text-danger" %}
+                                            {% endif %}
+                                            <td class="value {{ color }}">{{ each["data"]["ytd_change"] }}</td>
+                                        </tr>
+                                        <tr class="mcap">
+                                            <td class="text">MCap</td>
+                                            <td class="value">{{ each["data"]["market_cap"] }}</td>
+                                        </tr>
+                                        <tr class="toatal-supply">
+                                            <td class="text">Total Supply</td>
+                                            <td class="value">{{ each["data"]["total_sypply"] }}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="card-footer bg-white">
+                                <a class="btn rounded-pill border-top-0" href="#">Details</a>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!------------------FOOTER SECTION-------------------->
+        <section id="footer">
+            <img src="{{ url_for('static',filename='images/wave2.png') }}" class="foot-wave-pattern img-fluid">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-6 about-me">
+                        <p class="head-point">Consistency leads to Efficiency !</p>
+                        <p class="subpoints">A self-taught developer and a consistent learner with a proven skillset seeking for a
+                            technical position in an organization which will help me deliver my best and
+                            upgrade my skills to meet the demands of the organization.</p>
+                        <p class="subpoints">Take time, while (concepts != clear)<br>
+                            {<br>
+                                &emsp;&ensp;Learn;<br>
+                            }<br>
+                            and then, DEVELOP...!
+                        </p>
+                    </div>
+                    <div class="col-lg-6 contact-me">
+                        <p class="foot-heading"><span>Contact me:-</span>
+                            <p class="phone-number"><i class="bi bi-phone">&nbsp;+91 7748841143</i></p>
+                            <p class="email-address"><i class="bi bi-envelope">&nbsp;patelayushap1512@gmail.com</i></p>
+                            <p class="residence"><i class="bi bi-house">&nbsp;Mhow, Indore, Madhya Pradesh, India</i></p>
+                        </p>
+                        <div class="social-links">
+                            <p class="foot-heading"><span>Social Media</span></p>
+                            <a href="https://www.linkedin.com/in/ayush-patel-15-/" target="_blank">
+                                <img class="social-media-icon" src="{{ url_for('static',filename='images/linkedin.png') }}">
+                            </a>
+                            <a href="https://github.com/Ayush-Patel15" target="_blank">
+                                <img class="social-media-icon" src="{{ url_for('static',filename='images/github.png') }}">
+                            </a>
+                            <a href="https://www.instagram.com/__patelayush_/" target="_blank">
+                                <img class="social-media-icon" src="{{ url_for('static',filename='images/instagram.png') }}">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <hr class="bg-white">
+                <p class="copyright-text">Website created by Ayush - With &#x2764; &copy;</p>
+            </div>
+        </section>
+
+    </body>
+
+</html>

@@ -1,0 +1,209 @@
+*{
+    color: #0d0d26;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Navbar Stylings */
+#nav-bar{
+    background-color: #0d0d26;
+}
+
+.logo-title{
+/*    color: #4ddbff; */
+    color: white;
+    font-size: 44px;
+    font-weight: 550;
+    font-style: italic;
+    text-shadow: none;
+    text-align: center;
+    padding-left: 5px;
+}
+
+/* Banner Stylings */
+#banner{
+    background-image: linear-gradient(#0d0d26,#21215f);
+    margin-top: -15px;      /* To reduce the screen size of banner */
+}
+
+.heading{
+    margin-top: 80px;
+    margin-left: 125px;
+}
+
+.head-point{
+    color: white;
+    font-size: 32px;
+    font-weight: 450;
+    margin-left: 25px;
+    margin-bottom: 30px;
+}
+
+.subpoints{
+    margin-left: 35px;
+    color: white;
+    font-size: 22px;
+    font-weight: 300;
+    font-style: italic;
+}
+
+.subpoints a{
+    text-decoration: none;
+    display: inline-block;
+}
+
+.subpoints a:hover{
+    transform: scale(1.2);
+}
+
+i{
+    color: white;
+    font-size: 22px;
+}
+
+.lg-banner{
+    height: 400px;
+    width: 400px;
+}
+
+.head-wave-pattern{
+    margin-top: -20px;      /* To reduce the screen size of banner */
+    margin-bottom: -5px;
+}
+
+/* CRYPTO CARDS */
+
+#content-crypto-cards{
+    background-color: white;
+}
+
+.title{
+    margin-top: 25px;
+    text-align: center;
+}
+
+.title::before{
+    content: "";
+    background-color: #0d0d26;
+    height: 5px;
+    width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    transform: translateY(60px);
+}
+
+.title::after{
+    content: "";
+    background-color: #0d0d26;
+    height: 15px;
+    width: 75px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    transform: translateY(12px);
+}
+
+/* Crypto-cards-stylings */
+.card-content{
+    margin-top: 50px;
+    margin-bottom: 25px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 21.5%;
+}
+
+.card-header{
+    padding: 20px 20px;
+}
+
+.card-title{
+    display: inline;
+}
+
+.card-price{
+    float: right;
+}
+
+.card-volume{
+    padding-top: 3px;
+}
+
+.card-body{
+    background-color: whitesmoke;
+    padding: 10px 20px;
+}
+
+table{
+    width: 100%;
+}
+
+td.text{
+    width: 35%;
+    float: left;
+    padding-top: 5px;
+}
+
+td.value{
+    float: right;
+    padding-top: 5px;
+}
+
+.card-footer{
+    padding: 15px 20px;
+}
+
+.card-footer a{
+    border-color: #0d0d26;
+}
+
+/* FOOTER SECTION STYLING */
+#footer{
+    background-image: linear-gradient(#21215f,#0d0d26);
+    margin-top: 25px;
+    padding-bottom: 25px;
+}
+
+.contact-me{
+    padding-left: 10%;
+    padding-top: 75px;
+    font-size: 20px;
+    font-weight: 100;
+}
+
+.foot-heading span{
+    color: white;
+    font-size: 24px;
+    font-weight: 350;
+}
+
+.social-links{
+    padding-top: 15px;
+}
+
+.social-links a{
+    display: inline-block;
+}
+
+.social-links a:hover{
+    transform: scale(1.2);
+}
+
+.social-media-icon{
+    height: 50px;
+    width: 50px;
+}
+
+.copyright-text{
+    color: white;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 250;
+}
+
+/* END OF CSS */
