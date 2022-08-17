@@ -2,7 +2,7 @@
 
 A website which represents real-time data of top 12 cryptocurrencies by market_cap. 
 
-App:- [Link](https://cryptocurrency-coins.herokuapp.com/)
+Website:- [Link](https://cryptocurrency-coins.herokuapp.com/)
 
 Attributes are:- 
 
