@@ -1,6 +1,10 @@
 # CryptoCoins
 
-A website which represents real-time data of top 12 cryptocurrencies by market_cap. Attributes are:- 
+A website which represents real-time data of top 12 cryptocurrencies by market_cap. 
+
+App:- [Link](https://cryptocurrency-coins.herokuapp.com/)
+
+Attributes are:- 
 
 - name
 - price
@@ -17,6 +21,8 @@ A website which represents real-time data of top 12 cryptocurrencies by market_c
 It's basically a small website displaying frontend + backend work with the help of Flask framework.
 
 `NOTE: Scheduling/auto-refresh is not added yet - for real time price check.`
+
+`NOTE: Website is not responsive as of now.`
 
 `src` - The folder consist of all the files that are responsible for logic of backend work. It has the scraper function and helpers to scrape the required data from different sources.
 
