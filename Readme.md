@@ -3,7 +3,7 @@
 A website that represents real-time data of top 12 cryptocurrencies by market_cap. 
 Data will update after 150 seconds (2.5 minutes) continuosly.
 
-Website:- [CryptoCoins](https://cryptocurrency-coins.herokuapp.com/)
+Website:- [CryptoCoins](https://cryptocoins.onrender.com/cryptocurrency-list)
 
 Attributes are:- 
 
